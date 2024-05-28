@@ -3,6 +3,7 @@ import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { IoIosLogOut } from "react-icons/io";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import img from "../../assets/photo/logo-removebg.png";
 import { auth } from "../../firebase/firebase.config";
 export default function NavBar() {
   const [dropdown, setDropdown] = useState(false);
@@ -50,8 +51,7 @@ export default function NavBar() {
           <div className="flex items-center justify-between   md:block ">
             <Link to="/">
               <div className="flex cursor-pointer ">
-                {/* <img className="w-14" src={img} alt="" /> */}
-                <span className="text-lg font-bold mt-4 ">E-SHOP</span>
+                <img className="w-[150px]" src={img} alt="" />
               </div>
             </Link>
             <div className="md:hidden">
@@ -106,11 +106,11 @@ export default function NavBar() {
                 </Link>
               </li>
 
-              <li className=" hover:text-black-600 cursor-pointer">
+              {/* <li className=" hover:text-black-600 cursor-pointer">
                 <Link to="/about-us">
                   <p>About us</p>
                 </Link>
-              </li>
+              </li> */}
 
               {/* <li className=" hover:text-black-600 cursor-pointer">
                 <Link to="/menu">
@@ -134,9 +134,9 @@ export default function NavBar() {
                       <ul className="">
                         {/* Add your dropdown items here */}
 
-                        <Link to="dashboard/update-profile">
+                        <Link to="dashboard/profile">
                           <li className="px-4 py-2 transition-all duration-300 opacity-100 transform scale-100 hover:bg-gray-100 hover:text-black shake-menu">
-                            Update Profile
+                            Profile
                           </li>
                         </Link>
                         <Link to="dashboard/add-product">
@@ -168,11 +168,6 @@ export default function NavBar() {
                   </Link>
                 </li>
               )}
-              <li className=" hover:text-black-600  cursor-pointer">
-                <Link to="/jobs">
-                  <p>Jobs</p>
-                </Link>
-              </li>
 
               {user && (
                 <li

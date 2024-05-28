@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
-import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 
-import AddProduct from "../pages/dashboard/addProduct";
+import Main from "../pages/Main";
 import ManageProducts from "../pages/dashboard/ManageProducts";
+import UpdateProfile from "../pages/dashboard/UpdateProfile";
+import AddProduct from "../pages/dashboard/addProduct";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Main />,
       },
       {
         path: "/login",
@@ -30,10 +31,10 @@ export const router = createBrowserRouter([
       //     element: <ProductDetail></ProductDetail>,
       //   },
 
-      //   {
-      //     path: '/dashboard/update-profile',
-      //     element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>,
-      //   },
+      {
+        path: "/dashboard/profile",
+        element: <UpdateProfile></UpdateProfile>,
+      },
       {
         path: "/dashboard/add-product",
         element: <AddProduct></AddProduct>,

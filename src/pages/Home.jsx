@@ -5,13 +5,15 @@ export default function Home() {
   const [products, setProducts] = useState();
 
   useEffect(() => {
-    // fetch("http://localhost:5000/api/v1/recipe")
+    // fetch("https://inventory-backend-ooh5.onrender.com/api/v1/recipe")
     //   .then((res) => res.json())
     //   .then((data) => setRescipes(data));
 
     async function load() {
       //get recipies
-      const productRes = await fetch("http://localhost:5000/api/v1/product");
+      const productRes = await fetch(
+        "https://inventory-backend-ooh5.onrender.com/api/v1/product"
+      );
       const productData = await productRes.json();
       console.log(productData);
       setProducts(productData?.data);

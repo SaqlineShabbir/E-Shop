@@ -28,7 +28,7 @@ const EditProductModal = ({ setOpenModal, productDa, fetchData }) => {
 
               try {
                 const response = await fetch(
-                  `http://localhost:5000/api/v1/product/${productDa?._id}`,
+                  `https://inventory-backend-ooh5.onrender.com/api/v1/product/${productDa?._id}`,
                   {
                     method: "PATCH",
                     headers: {

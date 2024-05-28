@@ -11,7 +11,9 @@ const ManageProducts = () => {
   useEffect(() => {
     async function load() {
       try {
-        const productRes = await fetch("http://localhost:5000/api/v1/product");
+        const productRes = await fetch(
+          "https://inventory-backend-ooh5.onrender.com/api/v1/product"
+        );
         const productData = await productRes.json();
         setProducts(productData?.data || []);
       } catch (error) {
@@ -35,7 +37,7 @@ const ManageProducts = () => {
               toast.dismiss(t.id);
               try {
                 const response = await fetch(
-                  `http://localhost:5000/api/v1/product/${id}`,
+                  `https://inventory-backend-ooh5.onrender.com/api/v1/product/${id}`,
                   {
                     method: "DELETE",
                   }

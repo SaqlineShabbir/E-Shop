@@ -55,7 +55,7 @@ const AddProduct = () => {
               setLoading(true);
               try {
                 await axios.post(
-                  "http://localhost:5000/api/v1/product",
+                  "https://inventory-backend-ooh5.onrender.com/api/v1/product",
                   recipeData
                 );
                 toast.success("Product added successfully!");
